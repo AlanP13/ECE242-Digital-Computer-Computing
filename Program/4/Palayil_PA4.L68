@@ -1,0 +1,30 @@
+00001500 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.12.29
+Created On: 3/23/2021 10:14:43 PM
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Title      : ECE 242 Programming Assignment #4
+00000000                             3  * Written by : Alan Palayil
+00000000                             4  * Date       : 03/23/2021
+00000000                             5  * Description: Addition of three values
+00000000                             6  *-----------------------------------------------------------
+00001500                             7     ORG    $1500
+00001500                             8  START:            ;First instruction of program
+00001500                             9  
+00001500  200C                      10      MOVE.L A4, D0 //Move the value of A4 to D0
+00001502  D081                      11      ADD.L D1,D0   //Add the value of D1 to D0
+00001504  0640 0037                 12      ADDI #55,D0   //Add the immediate value of 55 to D0
+00001508  2640                      13      MOVE.L D0,A3  // Move the value in D0 to A3
+0000150A                            14  
+0000150A  FFFF FFFF                 15      SIMHALT       //halt simulator
+0000150E                            16  
+0000150E                            17      END    START        ; last line of source
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+START               1500

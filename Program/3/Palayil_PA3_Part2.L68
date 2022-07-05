@@ -1,0 +1,37 @@
+00001000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.12.29
+Created On: 3/11/2021 3:12:21 PM
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Title      : ECE 242 Programming Assignment #3
+00000000                             3  * Written by : Alan Palayil (Won-Jae Yi)
+00000000                             4  * Date       : 3/3/2021
+00000000                             5  * Description: First assembly program -Part 2
+00000000                             6  *-----------------------------------------------------------
+00001000                             7      ORG    $1000
+00001000                             8  START:                  ; first instruction of program
+00001000                             9  
+00001000                            10  
+00001000  70FF                      11      MOVE.L #$FFFFFFFF,D0
+00001002  72FF                      12      MOVE.L #$FFFFFFFF,D1
+00001004  74FF                      13      MOVE.L #$FFFFFFFF,D2
+00001006  4278 0950                 14      CLR.W $950
+0000100A  123C 0075                 15      MOVE.B #$75, D1
+0000100E  143C 00AC                 16      MOVE.B #$AC,D2
+00001012  D401                      17      ADD.B D1,D2
+00001014  D578 0950                 18      ADD.W D2,$950
+00001018  3038 0950                 19      MOVE.W $950,D0
+0000101C                            20      
+0000101C  103C 0009                 21      MOVE.B #9,D0
+00001020  4E4F                      22      TRAP #15             ; halt simulator
+00001022                            23  
+00001022                            24      END    START        ; last line of source
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+START               1000

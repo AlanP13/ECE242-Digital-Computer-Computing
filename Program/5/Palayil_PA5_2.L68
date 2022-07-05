@@ -1,0 +1,37 @@
+00002000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.12.29
+Created On: 4/1/2021 5:09:17 PM
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Title      :ECE 242 Programming Assignment #5-2
+00000000                             3  * Written by :Alan Palayil
+00000000                             4  * Date       :03/31/2021
+00000000                             5  * Description:Addition of six unsigned values
+00000000                             6  *-----------------------------------------------------------
+00002000                             7      ORG    $2000
+00002000                             8  START:                  ; first instruction of program
+00002000                             9  
+00002000  4280                      10      CLR.L D0            //Clear D0
+00002002  2038 0650                 11      MOVE.L $650, D0     //Move content of $650 to D0
+00002006  D0B8 0660                 12      ADD.L $660, D0      //Add content of $660 to D0
+0000200A  D0B8 0670                 13      ADD.L $670, D0      //Add content of $670 to D0
+0000200E  D0B8 0680                 14      ADD.L $680, D0      //Add content of $680 to D0
+00002012  D08A                      15      ADD.L A2, D0        //Add content of A2 to D0
+00002014  D082                      16      ADD.L D2,D0         //Add content of D2 to D0
+00002016  21C0 0700                 17      MOVE.L D0, $700     //Move content of D0 to $700
+0000201A  21C2 0740                 18      MOVE.L D2,$740      //Move content of D2 to $740
+0000201E  46B8 0740                 19      NOT.L $740          //Not to the value of $740
+00002022  21C2 0760                 20      MOVE.L D2,$760      //Move content of D2 to $760
+00002026  46B8 0760                 21      NOT.L $760          //Not to the value of $760
+0000202A  52B8 0760                 22      ADDI.L #1,$760      //Add immediate value of 1 to the value of $760
+0000202E  FFFF FFFF                 23      SIMHALT             //Halt simulator
+00002032                            24      END    START        ; last line of source
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+START               2000

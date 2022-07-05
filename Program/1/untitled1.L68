@@ -1,0 +1,27 @@
+00001500 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.12.29
+Created On: 3/23/2021 1:05:53 PM
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Title      : ECE 242 Assignment 4
+00000000                             3  * Written by : Alan Palayil
+00000000                             4  * Date       : 3/23/2021
+00000000                             5  * Description:
+00000000                             6  *-----------------------------------------------------------
+00001500                             7      ORG    $1500
+00001500                             8  START:                  ; first instruction of program
+00001500  200C                       9      MOVE.L A4,D0
+00001502  D081                      10      ADD.L D1,D0
+Line 11 ERROR: Invalid addressing mode
+00001504                            11      ADDI.L #55,A3
+00001504  4E4F                      12      TRAP #15             ; halt simulator
+00001506                            13      END    START        ; last line of source
+
+1 error detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+START               1500

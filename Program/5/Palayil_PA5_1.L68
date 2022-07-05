@@ -1,0 +1,33 @@
+00002000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.12.29
+Created On: 3/31/2021 5:42:34 PM
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Title      :ECE 242 Programming Assignment #5-1
+00000000                             3  * Written by :Alan Palayil
+00000000                             4  * Date       :03/31/2021
+00000000                             5  * Description:Addition of four numbers in an array at $3000
+00000000                             6  *-----------------------------------------------------------
+00002000                             7      ORG    $2000
+00002000                             8  START:                  ; first instruction of program
+00002000  303C 0004                  9      MOVE.W #4,D0        //Counter for the array
+00002004  307C 3000                 10      MOVEA.W #$3000, A0  //Starting location of the $3000
+00002008                            11  ArrayLoop:
+00002008  D258                      12      ADD.W (A0)+,D1      //Add the element to D1
+0000200A  31C1 2100                 13      MOVE.W D1,$2100     //Move the value of D1 to $2100
+0000200E  5340                      14      SUBI.W #1,D0        //Subtract to counter
+00002010  66F6                      15      BNE ArrayLoop       //Check if the array is completely read
+00002012  4241                      16      CLR.W D1            //Clear register D1
+00002014  3278 2100                 17      MOVEA.W $2100,A1    //Result in $2100 is placed in A1
+00002018  FFFF FFFF                 18      SIMHALT             //Halt simulator
+0000201C                            19      END    START        ; last line of source
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+ARRAYLOOP           2008
+START               2000
